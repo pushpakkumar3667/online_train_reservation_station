@@ -1,0 +1,95 @@
+<header>
+<div *ngIf="alert" class="alert alert-success" role="alert">
+    Ticket Booked With PNR Number: {{generated_pnr}}
+  </div>
+
+<div style="display: flex;justify-content: center;color: snow;"><h1>Reservation Form</h1></div>
+
+<div class="pos">
+    <form (ngSubmit)="onSub()" #thisForms="ngForm">
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="noOfPassengers">Number Of Seats</label>
+                <select name="noOfPassengers" class="form-control" [(ngModel)]="newBooking.noOfSeats" required>
+                    <option selected>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="trainNumber">Train Number</label>
+                <input type="text" name="trainNumber" class="form-control" name="trainNumber" placeholder="Enter Train Number"  disabled [(ngModel)]="newBooking.trainNumber">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="trainName">Train Name</label>
+                <input type="text" class="form-control" name="trainName" placeholder="Enter Train Name" disabled [(ngModel)]="newBooking.trainName">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputAddress">Journey Date</label>
+                <input type="date" class="form-control" name="inputAddress" disabled >
+            </div>
+            <div class="form-group col-md-4">
+                <label for="from">Source Station</label>
+                <input type="text" class="form-control" name="from" disabled [(ngModel)]="newBooking.source">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="to">Destination Station</label>
+                <input type="text" class="form-control" name="to" disabled [(ngModel)]="newBooking.destination">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="arrivalTime">Boarding Time</label>
+                <input type="text" class="form-control" name="boardingTime" disabled [(ngModel)]="newBooking.boardingTime">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="passengerName">Name of Passenger</label>
+                <input type="text" class="form-control" name="passengerName" placeholder="Enter Your Name" [(ngModel)]="newBooking.passengerName" #passengerName="ngModel" required>
+                <small *ngIf="passengerName.touched && !passengerName.valid">Please enter a valid name</small>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="age">Age</label>
+                <select name="age" class="form-control" [(ngModel)]="newBooking.age" required>
+                    <option selected>15-50(Adult)</option>
+                    <option>1-14(Child)</option>
+                    <option>51-60(Senior Citizen Catagory 1)</option>
+                    <option>61-100(Senior Citizen Catagory 2)</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="age">Gender</label>
+                <select name="gender" class="form-control" [(ngModel)]="newBooking.gender" required>
+                    <option selected>Female</option>
+                    <option>Male</option>
+                    <option>Others</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="phonenumber">Phone Number</label>
+                <input type="tel" class="form-control" name="phonenumber" placeholder="Enter Your Mobile Number" [(ngModel)]="newBooking.phonenumber" #phonenumber="ngModel" required>
+                <small *ngIf="phonenumber.touched && !phonenumber.valid">Please enter a valid phone number</small>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="email">Email Id</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter Your Email_Id" [(ngModel)]="newBooking.email" #email="ngModel" required>
+                <small *ngIf="email.touched && !email.valid">Please enter a valid email_id</small>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="price">Ticket Cost</label>
+                <input type="text" class="form-control" name="price" disabled [(ngModel)]="newBooking.ticketCost">
+                </div>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" [disabled]="!thisForms.valid">BooK Ticket</button>
+    </form>
+</div>
+</header>

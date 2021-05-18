@@ -1,0 +1,34 @@
+<header>
+<div class="row" style="display: flex;justify-content: space-around;">
+    <div class="col-lg-10" >
+      <table class="table table-hover table-bordered table-striped makeitwhite" >
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Train Number</th>
+            <th scope="col">Train Name</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Source Arrival Time</th>
+            <th scope="col">Destination Arrival Time</th>
+            <th scope="col">Available Seats</th>
+            <th scope="col">Price</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let train of allTrainss;let i=index;">
+            <th scope="row">{{train.trainNumber}}</th>
+            <td>{{train.trainName}}</td>
+            <td>{{train.from}}</td>
+            <td>{{train.to}}</td>
+            <td>{{train.arrivalTime}}</td>
+            <td>{{train.departureTime}}</td>
+            <td>{{train.totalSeats}}</td>
+            <td>{{train.price}}</td>
+            <td><button class="btn btn-warning" type="button" (click)="onClick(i)" [disabled]="isloggedin">BooK</button></td>
+           </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</header>

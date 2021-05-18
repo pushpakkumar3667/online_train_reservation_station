@@ -1,0 +1,9 @@
+<div class=" row rowDecor">
+    <div class="col-sm-2">
+        <label>Delete Train with Number: <input type="text" #id name="deletedNo" ></label>
+    </div>
+
+    <div class="col-sm-2">
+        <button type="submit" class="btn btn-warning" (click)="delTrain(id)"  [disabled]="toggler">Delete Train</button>
+    </div>
+</div>

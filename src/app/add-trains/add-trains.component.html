@@ -1,0 +1,95 @@
+<header>
+    <div style="display: flex;justify-content: center;">
+    <h1 style="color: snow;">Add Trains</h1>
+</div>
+<div class="pos">
+    <form #userForm="ngForm" (ngSubmit)="onAdd()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="trainNumber">Train Number</label>
+                <input type="number" class="form-control" name="trainNumber" placeholder="Enter Train Number" [(ngModel)]="newTrain.trainNumber" #trainNumber="ngModel" required>
+                <small *ngIf="trainNumber.touched && !trainNumber.valid">Enter a valid train number</small>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="trainName">Train Name</label>
+                <input type="text" class="form-control" name="trainName" placeholder="Enter Train Name" [(ngModel)]="newTrain.trainName" #trainName="ngModel" required>
+                <small *ngIf="trainName.touched && !trainName.valid">Enter a valid train name</small>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputAddress">Date</label>
+                <input type="Date" class="form-control" name="date" [(ngModel)]="newTrain.date" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="from">From</label>
+                <select name="from" class="form-control" [(ngModel)]="newTrain.from" required>
+                    <option value="">Choose...</option>
+                    <option>Delhi</option>
+                    <option>Ahemdabad</option>
+                    <option>Mumbai</option>
+                    <option>Pune</option>
+                    <option>Hyderabad</option>
+                    <option>Chennai</option>
+                    <option>Bhubneshwar</option>
+                    <option>Kolkata</option>
+                    <option>Guwahati</option>
+                    <option>Jaipur</option>
+                    <option>Patna</option>
+                    <option>Prayagraj</option>
+                    <option>Jalandhar</option>
+                    <option>JammuTawi</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="to">To</label>
+                <select name="to" class="form-control" [(ngModel)]="newTrain.to" required>
+                    <option value="">Choose...</option>
+                    <option>Delhi</option>
+                    <option>Ahemdabad</option>
+                    <option>Mumbai</option>
+                    <option>Pune</option>
+                    <option>Jaipur</option>
+                    <option>Hyderabad</option>
+                    <option>Chennai</option>
+                    <option>Bhubneshwar</option>
+                    <option>Kolkata</option>
+                    <option>Guwahati</option>
+                    <option>Patna</option>
+                    <option>Prayagraj</option>
+                    <option>Jalandhar</option>
+                    <option>JammuTawi</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="arrivalTime">Arrival Time</label>
+                <input type="time" class="form-control" name="arrivalTime" placeholder="Enter Train Arrival Time" [(ngModel)]="newTrain.arrivalTime" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="departureTime">Departure Time</label>
+                <input type="time" class="form-control" name="departureTime" placeholder="Enter Train Departure Time" [(ngModel)]="newTrain.departureTime" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="totalSeats">Total Seats</label>
+                <select name="totalSeats" class="form-control" [(ngModel)]="newTrain.totalSeats" required>
+                    <option selected>Choose...</option>
+                    <option>72</option>
+                    <option>52</option>
+                    <option>12</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" name="price" placeholder="Enter Amount" [(ngModel)]="newTrain.price" #price="ngModel" required>
+                <small *ngIf="price.touched && !price.valid">Enter a valid amount</small>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">ADD TRAIN</button>
+    </form>
+</div>
+</header>

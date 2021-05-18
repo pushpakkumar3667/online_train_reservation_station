@@ -1,0 +1,10 @@
+.rowDecor
+{
+    background-color: rgb(238, 48, 73);
+    height: 120px;
+    width: auto;
+    align-items: center;
+    color: cornsilk;
+    justify-content: space-around;
+    margin-top: 20px;
+}

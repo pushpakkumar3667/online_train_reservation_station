@@ -1,0 +1,23 @@
+header
+{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../../assets/pictures/indexPage.jpg);
+    height: 120vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.pos
+{
+    background-color: snow;
+    border: 1px solid black;
+    padding :30px;
+    margin:20px 200px 0px 200px;
+}
+input.ng-touched.ng-valid
+{
+    border: 2px solid green;
+}
+input.ng-touched.ng-invalid
+{
+    border: 2px solid red;
+}

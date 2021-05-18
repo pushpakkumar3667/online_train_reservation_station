@@ -1,0 +1,9 @@
+<div class=" row rowDecor">
+    <div class="col-sm-2">
+        <label>Cancel Ticket with PNR: <input type="text" #id  name="cancellNo" ></label>
+    </div>
+
+    <div class="col-sm-2">
+        <button type="submit" class="btn btn-warning" (click)="cancelTicket(id)" [disabled]="toggler">Cancel Ticket</button>
+    </div>
+</div>
